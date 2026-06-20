@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Stats from "./components/Stats";
 import Products from "./components/Products";
 import Origins from "./components/Origins";
 import Contact from "./components/Contact";
@@ -11,31 +12,42 @@ import FadeInSection from "./components/FadeInSection";
 
 export default function Home() {
   return (
-    <main className="bg-white text-gray-900">
+    <>
+      {/*
+        Navbar est fixed → elle flotte au-dessus de tout.
+        Le Hero fait 100svh et absorbe l'espace de la navbar.
+        Les sections suivantes commencent naturellement après le Hero.
+      */}
       <Navbar />
       <GoogleAnalytics />
 
-      <Hero />
+      <main>
+        <Hero />
 
-      <FadeInSection>
-        <About />
-      </FadeInSection>
+        <FadeInSection>
+          <Stats />
+        </FadeInSection>
 
-      <FadeInSection>
-        <Products />
-      </FadeInSection>
+        <FadeInSection>
+          <About />
+        </FadeInSection>
 
-      <FadeInSection>
-        <Origins />
-      </FadeInSection>
+        <FadeInSection>
+          <Products />
+        </FadeInSection>
 
-      <FadeInSection>
-        <Contact />
-      </FadeInSection>
+        <FadeInSection>
+          <Origins />
+        </FadeInSection>
 
-      <Footer />
+        <FadeInSection>
+          <Contact />
+        </FadeInSection>
+
+        <Footer />
+      </main>
 
       <WhatsAppButton />
-    </main>
+    </>
   );
 }
